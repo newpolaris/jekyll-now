@@ -182,6 +182,19 @@ a:hover { text-decoration: underline; }
 .main-content dl dd { padding: 0; margin-bottom: 1rem; }
 .main-content hr { height: 2px; padding: 0; margin: 1rem 0; background-color: #eff0f1; border: 0; }
 
+.main-footer { word-wrap: break-word; }
+.main-footer :first-child { margin-top: 0; }
+@media screen and (min-width: 64em) { .main-content { max-width: 64rem; padding: 2rem 6rem; margin: 0 auto; font-size: 1.1rem; } }
+@media screen and (min-width: 42em) and (max-width: 64em) { .main-content { padding: 2rem 4rem; font-size: 1.1rem; } }
+@media screen and (max-width: 42em) { .main-content { padding: 2rem 1rem; font-size: 1rem; } }
+.main-footer table { display: block; width: 100%; overflow: auto; word-break: normal; word-break: keep-all; -webkit-overflow-scrolling: touch; }
+.main-footer table th { font-weight: bold; }
+.main-footer table th, .main-content table td { padding: 0.5rem 1rem; border: 1px solid #e9ebec; }
+.main-footer dl { padding: 0; }
+.main-footer dl dt { padding: 0; margin-top: 1rem; font-size: 1rem; font-weight: bold; }
+.main-footer dl dd { padding: 0; margin-bottom: 1rem; }
+.main-footer hr { height: 2px; padding: 0; margin: 1rem 0; background-color: #eff0f1; border: 0; }
+
 .site-footer { padding-top: 2rem; margin-top: 2rem; border-top: solid 1px #eff0f1; }
 @media screen and (min-width: 64em) { .site-footer { font-size: 1rem; } }
 @media screen and (min-width: 42em) and (max-width: 64em) { .site-footer { font-size: 1rem; } }

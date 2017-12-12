@@ -15,3 +15,7 @@ int main()
   return 0;
 }
 ```
+<div id='helloworld-demo'></div>
+<script src="//cdnjs.cloudflare.com/ajax/libs/three.js/88/three.min.js"></script>
+<script src="/code/lib/demo/helloworld.js"></script>
+<script>helloworld_demo('helloworld-demo')</script>
