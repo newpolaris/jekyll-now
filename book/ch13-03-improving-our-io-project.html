@@ -1,0 +1,390 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>I/O 프로젝트 개선하기 - The Rust Programming Language</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="affix"><a href="foreword.html">들어가기 앞서</a></li><li class="affix"><a href="ch00-00-introduction.html">소개</a></li><li><a href="ch01-00-getting-started.html"><strong aria-hidden="true">1.</strong> 시작하기</a></li><li><ol class="section"><li><a href="ch01-01-installation.html"><strong aria-hidden="true">1.1.</strong> 설치하기</a></li><li><a href="ch01-02-hello-world.html"><strong aria-hidden="true">1.2.</strong> Hello, World!</a></li><li><a href="ch01-03-hello-cargo.html"><strong aria-hidden="true">1.3.</strong> Hello, Cargo!</a></li></ol></li><li><a href="ch02-00-guessing-game-tutorial.html"><strong aria-hidden="true">2.</strong> 추리 게임 튜토리얼</a></li><li><a href="ch03-00-common-programming-concepts.html"><strong aria-hidden="true">3.</strong> 보편적인 프로그래밍 개념</a></li><li><ol class="section"><li><a href="ch03-01-variables-and-mutability.html"><strong aria-hidden="true">3.1.</strong> 변수와 가변성</a></li><li><a href="ch03-02-data-types.html"><strong aria-hidden="true">3.2.</strong> 데이터 타입들</a></li><li><a href="ch03-03-how-functions-work.html"><strong aria-hidden="true">3.3.</strong> 함수 동작 원리</a></li><li><a href="ch03-04-comments.html"><strong aria-hidden="true">3.4.</strong> 주석</a></li><li><a href="ch03-05-control-flow.html"><strong aria-hidden="true">3.5.</strong> 제어문</a></li></ol></li><li><a href="ch04-00-understanding-ownership.html"><strong aria-hidden="true">4.</strong> 소유권 이해하기</a></li><li><ol class="section"><li><a href="ch04-01-what-is-ownership.html"><strong aria-hidden="true">4.1.</strong> 소유권이 뭔가요?</a></li><li><a href="ch04-02-references-and-borrowing.html"><strong aria-hidden="true">4.2.</strong> 참조자와 빌림</a></li><li><a href="ch04-03-slices.html"><strong aria-hidden="true">4.3.</strong> 슬라이스</a></li></ol></li><li><a href="ch05-00-structs.html"><strong aria-hidden="true">5.</strong> 연관된 데이터들을 구조체로 다루기</a></li><li><ol class="section"><li><a href="ch05-01-defining-structs.html"><strong aria-hidden="true">5.1.</strong> 구조체를 정의하고 생성하기</a></li><li><a href="ch05-02-example-structs.html"><strong aria-hidden="true">5.2.</strong> 구조체를 이용한 예제 프로그램</a></li><li><a href="ch05-03-method-syntax.html"><strong aria-hidden="true">5.3.</strong> 메소드 문법</a></li></ol></li><li><a href="ch06-00-enums.html"><strong aria-hidden="true">6.</strong> 열거형과 패턴 매칭</a></li><li><ol class="section"><li><a href="ch06-01-defining-an-enum.html"><strong aria-hidden="true">6.1.</strong> 열거형 정의하기</a></li><li><a href="ch06-02-match.html"><strong aria-hidden="true">6.2.</strong> match 흐름 제어 연산자</a></li><li><a href="ch06-03-if-let.html"><strong aria-hidden="true">6.3.</strong> if let을 사용한 간결한 흐름 제어</a></li></ol></li><li><a href="ch07-00-modules.html"><strong aria-hidden="true">7.</strong> 모듈</a></li><li><ol class="section"><li><a href="ch07-01-mod-and-the-filesystem.html"><strong aria-hidden="true">7.1.</strong> mod와 파일 시스템</a></li><li><a href="ch07-02-controlling-visibility-with-pub.html"><strong aria-hidden="true">7.2.</strong> pub으로 가시성 제어하기</a></li><li><a href="ch07-03-importing-names-with-use.html"><strong aria-hidden="true">7.3.</strong> use로 이름 가져오기</a></li></ol></li><li><a href="ch08-00-common-collections.html"><strong aria-hidden="true">8.</strong> 일반적인 컬렉션</a></li><li><ol class="section"><li><a href="ch08-01-vectors.html"><strong aria-hidden="true">8.1.</strong> 벡터</a></li><li><a href="ch08-02-strings.html"><strong aria-hidden="true">8.2.</strong> 스트링</a></li><li><a href="ch08-03-hash-maps.html"><strong aria-hidden="true">8.3.</strong> 해쉬맵</a></li></ol></li><li><a href="ch09-00-error-handling.html"><strong aria-hidden="true">9.</strong> 에러 처리</a></li><li><ol class="section"><li><a href="ch09-01-unrecoverable-errors-with-panic.html"><strong aria-hidden="true">9.1.</strong> panic!과 함께하는 복구 불가능한 에러</a></li><li><a href="ch09-02-recoverable-errors-with-result.html"><strong aria-hidden="true">9.2.</strong> Result와 함께하는 복구 가능한 에러</a></li><li><a href="ch09-03-to-panic-or-not-to-panic.html"><strong aria-hidden="true">9.3.</strong> panic!이냐, panic!이 아니냐, 그것이 문제로다</a></li></ol></li><li><a href="ch10-00-generics.html"><strong aria-hidden="true">10.</strong> 제네릭 타입, 트레잇, 그리고 라이프타임</a></li><li><ol class="section"><li><a href="ch10-01-syntax.html"><strong aria-hidden="true">10.1.</strong> 제네릭 데이터 타입</a></li><li><a href="ch10-02-traits.html"><strong aria-hidden="true">10.2.</strong> 트레잇: 공유 동작을 정의하기</a></li><li><a href="ch10-03-lifetime-syntax.html"><strong aria-hidden="true">10.3.</strong> 라이프타임을 이용한 참조자 유효화</a></li></ol></li><li><a href="ch11-00-testing.html"><strong aria-hidden="true">11.</strong> 테스팅</a></li><li><ol class="section"><li><a href="ch11-01-writing-tests.html"><strong aria-hidden="true">11.1.</strong> 테스트 작성하기</a></li><li><a href="ch11-02-running-tests.html"><strong aria-hidden="true">11.2.</strong> 테스트 실행하기</a></li><li><a href="ch11-03-test-organization.html"><strong aria-hidden="true">11.3.</strong> 테스트 조직화</a></li></ol></li><li><a href="ch12-00-an-io-project.html"><strong aria-hidden="true">12.</strong> I/O 프로젝트: 커맨드 라인 프로그램 만들기</a></li><li><ol class="section"><li><a href="ch12-01-accepting-command-line-arguments.html"><strong aria-hidden="true">12.1.</strong> 커맨드 라인 인자 허용하기</a></li><li><a href="ch12-02-reading-a-file.html"><strong aria-hidden="true">12.2.</strong> 파일 읽기</a></li><li><a href="ch12-03-improving-error-handling-and-modularity.html"><strong aria-hidden="true">12.3.</strong> 모듈성과 에러처리의 향상을 위한 리팩토링</a></li><li><a href="ch12-04-testing-the-librarys-functionality.html"><strong aria-hidden="true">12.4.</strong> 테스트 주도 개발로 라이브러리의 기능 개발하기</a></li><li><a href="ch12-05-working-with-environment-variables.html"><strong aria-hidden="true">12.5.</strong> 환경 변수들을 활용하기</a></li><li><a href="ch12-06-writing-to-stderr-instead-of-stdout.html"><strong aria-hidden="true">12.6.</strong> 표준출력 대신 표준에러로 에러메시지 출력하기</a></li></ol></li><li><a href="ch13-00-functional-features.html"><strong aria-hidden="true">13.</strong> 함수형 언어의 특성들: 반복자들과 클로저들</a></li><li><ol class="section"><li><a href="ch13-01-closures.html"><strong aria-hidden="true">13.1.</strong> 클로저: 환경을 캡쳐할 수 있는 익명 함수</a></li><li><a href="ch13-02-iterators.html"><strong aria-hidden="true">13.2.</strong> 반복자로 일련의 항목들 처리하기</a></li><li><a href="ch13-03-improving-our-io-project.html" class="active"><strong aria-hidden="true">13.3.</strong> I/O 프로젝트 개선하기</a></li><li><a href="ch13-04-performance.html"><strong aria-hidden="true">13.4.</strong> 성능 비교하기: 루프 vs. 반복자</a></li></ol></li><li><a href="ch14-00-more-about-cargo.html"><strong aria-hidden="true">14.</strong> Cargo와 Crates.io 더 알아보기</a></li><li><ol class="section"><li><a href="ch14-01-release-profiles.html"><strong aria-hidden="true">14.1.</strong> 릴리즈 프로필을 이용해 빌드 커스터마이징하기</a></li><li><a href="ch14-02-publishing-to-crates-io.html"><strong aria-hidden="true">14.2.</strong> Crates.io에 크레이트 배포하기</a></li><li><a href="ch14-03-cargo-workspaces.html"><strong aria-hidden="true">14.3.</strong> Cargo 작업공간</a></li><li><a href="ch14-04-installing-binaries.html"><strong aria-hidden="true">14.4.</strong> cargo install을 이용해 Crates.io에서 바이너리 설치하기</a></li><li><a href="ch14-05-extending-cargo.html"><strong aria-hidden="true">14.5.</strong> 커스텀 명령어로 Cargo 확장하기</a></li></ol></li><li><a href="ch15-00-smart-pointers.html"><strong aria-hidden="true">15.</strong> 스마트 포인터</a></li><li><ol class="section"><li><a href="ch15-01-box.html"><strong aria-hidden="true">15.1.</strong> Box<T>는 힙에 있는 데이터를 가리키고 알려진 크기를 갖습니다</a></li><li><a href="ch15-02-deref.html"><strong aria-hidden="true">15.2.</strong> Deref 트레잇은 참조자를 통하여 데이터로의 접근을 허용합니다</a></li><li><a href="ch15-03-drop.html"><strong aria-hidden="true">15.3.</strong> Drop 트레잇은 메모리 정리 코드를 실행시킵니다</a></li><li><a href="ch15-04-rc.html"><strong aria-hidden="true">15.4.</strong> Rc<T>, 참조 카운팅 스마트 포인터</a></li><li><a href="ch15-05-interior-mutability.html"><strong aria-hidden="true">15.5.</strong> RefCell<T>와 내부 가변성 패턴</a></li><li><a href="ch15-06-reference-cycles.html"><strong aria-hidden="true">15.6.</strong> 순환 참조를 만드는 것과 메모리 누수는 안전한 것에 해당됩니다</a></li></ol></li><li><a href="ch16-00-concurrency.html"><strong aria-hidden="true">16.</strong> 겁없는 동시성</a></li><li><ol class="section"><li><a href="ch16-01-threads.html"><strong aria-hidden="true">16.1.</strong> 스레드</a></li><li><a href="ch16-02-message-passing.html"><strong aria-hidden="true">16.2.</strong> 메세지 패싱</a></li><li><a href="ch16-03-shared-state.html"><strong aria-hidden="true">16.3.</strong> 공유 상태</a></li><li><a href="ch16-04-extensible-concurrency-sync-and-send.html"><strong aria-hidden="true">16.4.</strong> 확장 가능한 동시성: Sync와 Send</a></li></ol></li><li><a href="ch17-00-oop.html"><strong aria-hidden="true">17.</strong> 러스트의 객체 지향 프로그래밍 기능들</a></li><li><ol class="section"><li><a href="ch17-01-what-is-oo.html"><strong aria-hidden="true">17.1.</strong> 객체 지향 언어의 특성</a></li><li><a href="ch17-02-trait-objects.html"><strong aria-hidden="true">17.2.</strong> 트레잇 객체를 사용하여 다른 타입 간의 값 허용하기</a></li><li><a href="ch17-03-oo-design-patterns.html"><strong aria-hidden="true">17.3.</strong> 객체 지향 디자인 패턴 구현하기</a></li></ol></li><li><a href="ch18-00-patterns.html"><strong aria-hidden="true">18.</strong> 값의 구조와 매칭되는 패턴</a></li><li><ol class="section"><li><a href="ch18-01-all-the-places-for-patterns.html"><strong aria-hidden="true">18.1.</strong> 패턴이 사용될 수 있는 모든 곳</a></li><li><a href="ch18-02-refutability.html"><strong aria-hidden="true">18.2.</strong> 반증 가능성: 패턴의 매칭이 실패할 수도 있는 경우</a></li><li><a href="ch18-03-pattern-syntax.html"><strong aria-hidden="true">18.3.</strong> 패턴 문법의 모든 것</a></li></ol></li><li><a href="ch19-00-advanced-features.html"><strong aria-hidden="true">19.</strong> 고급 기능들</a></li><li><ol class="section"><li><a href="ch19-01-unsafe-rust.html"><strong aria-hidden="true">19.1.</strong> 안전하지 않은 러스트</a></li><li><a href="ch19-02-advanced-lifetimes.html"><strong aria-hidden="true">19.2.</strong> 고급 라이프타임</a></li><li><a href="ch19-03-advanced-traits.html"><strong aria-hidden="true">19.3.</strong> 고급 트레잇</a></li><li><a href="ch19-04-advanced-types.html"><strong aria-hidden="true">19.4.</strong> 고급 타입</a></li><li><a href="ch19-05-advanced-functions-and-closures.html"><strong aria-hidden="true">19.5.</strong> 고급 함수와 클로저</a></li></ol></li><li><a href="ch20-00-final-project-a-web-server.html"><strong aria-hidden="true">20.</strong> 마지막 프로젝트: 멀티스레드 웹서버 만들기</a></li><li><ol class="section"><li><a href="ch20-01-single-threaded.html"><strong aria-hidden="true">20.1.</strong> 싱글 스레드 웹서버</a></li><li><a href="ch20-02-multithreaded.html"><strong aria-hidden="true">20.2.</strong> 싱글 스레드 서버를 멀티스레드 서버로 바꾸기</a></li><li><a href="ch20-03-graceful-shutdown-and-cleanup.html"><strong aria-hidden="true">20.3.</strong> 우아한 종료와 정리</a></li></ol></li><li><a href="appendix-00.html"><strong aria-hidden="true">21.</strong> Appendix</a></li><li><ol class="section"><li><a href="appendix-01-keywords.html"><strong aria-hidden="true">21.1.</strong> A - 키워드</a></li><li><a href="appendix-02-operators.html"><strong aria-hidden="true">21.2.</strong> B - 연산자 및 기호</a></li><li><a href="appendix-03-derivable-traits.html"><strong aria-hidden="true">21.3.</strong> C - derive 가능한 트레잇</a></li><li><a href="appendix-04-macros.html"><strong aria-hidden="true">21.4.</strong> D - 매크로</a></li><li><a href="appendix-05-translation.html"><strong aria-hidden="true">21.5.</strong> E - 본 책의 번역본 목록</a></li><li><a href="appendix-06-newest-features.html"><strong aria-hidden="true">21.6.</strong> F - 새로운 기능</a></li><li><a href="appendix-07-nightly-rust.html"><strong aria-hidden="true">21.7.</strong> G - 러스트가 만들어지는 과정과 “Nightly Rust”</a></li><li><a href="appendix-08-glossary.html"><strong aria-hidden="true">21.8.</strong> F - 번역 용어 정리</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">The Rust Programming Language</h1>
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2><a class="header" href="#io-프로젝트-개선하기" id="io-프로젝트-개선하기">I/O 프로젝트 개선하기</a></h2>
+<p>반복자에 대한 새로운 지식을 사용하여 12장의 I/O 프로젝트의 코드들을 더 깔끔하고
+간결하게 개선할 수 있습니다. 반복자를 사용하여 어떻게 <code>Config::new</code> 함수와
+<code>search</code> 함수의 구현을 개선할 수 있는지 살펴봅시다.</p>
+<h3><a class="header" href="#반복자를-사용하여-clone-제거하기" id="반복자를-사용하여-clone-제거하기">반복자를 사용하여 <code>clone</code> 제거하기</a></h3>
+<p>리스트 12-6 에서, <code>String</code> 값의 슬라이스를 받고 슬라이스를 인덱싱하고 복사
+함으로써 <code>Config</code> 구조체의 인스턴스를 생성하였고, <code>Config</code> 구조체가 이 값들을
+소유하도록 했습니다. 리스트 13-24 에서는 리스트 12-23 에 있던 것 처럼
+<code>Config::new</code> 함수의 구현을 다시 재현 했습니다:</p>
+<p><span class="filename">파일명: src/lib.rs</span></p>
+<pre><code class="language-rust ignore">impl Config {
+    pub fn new(args: &amp;[String]) -&gt; Result&lt;Config, &amp;'static str&gt; {
+        if args.len() &lt; 3 {
+            return Err(&quot;not enough arguments&quot;);
+        }
+
+        let query = args[1].clone();
+        let filename = args[2].clone();
+
+        let case_sensitive = env::var(&quot;CASE_INSENSITIVE&quot;).is_err();
+
+        Ok(Config { query, filename, case_sensitive })
+    }
+}
+</code></pre>
+<p><span class="caption">리스트 13-24: 리스트 12-23 의 <code>Config::new</code> 함수 재현
+</span></p>
+<p>그 당시, 비효율적인 <code>clone</code> 호출에 대해 걱정하지 말라고 얘기 했으며 미래에
+없앨 것이라고 했습니다. 자, 그때가 되었습니다!</p>
+<p><code>String</code> 요소들의 슬라이스를 <code>args</code> 파라미터로 받았지만 <code>new</code> 함수는 <code>args</code> 를
+소유하지 않기 때문에 <code>clone</code> 이 필요했습니다. <code>Config</code> 인스턴스의 소유권을
+반환하기 위해, <code>Config</code> 의 <code>query</code> 와 <code>filename</code> 필드로 값을 복제 함으로써
+<code>Config</code> 인스턴스는 그 값들을 소유할 수 있습니다.</p>
+<p>반복자에 대한 새로운 지식으로, 인자로써 슬라이스를 빌리는 대신 반복자의 소유권을
+갖도록 <code>new</code> 함수를 변경할 수 있습니다. 슬라이스의 길이를 체크하고 특정 위치로
+인덱싱을 하는 코드 대신 반복자의 기능을 사용할 것 입니다. 이것은 반복자가 값에
+접근 할 것이기 때문에 <code>Config::new</code> 함수가 무엇을 하는지를 명확하게 해줄 것
+입니다.</p>
+<p><code>Config::new</code> 가 반복자의 소유권을 갖고 빌린 값에 대한 인뎅싱을 사용하지 않게
+된다면, <code>clone</code> 을 호출하고 새로운 할당을 만드는 대신 <code>String</code> 값들을 반복자에서
+<code>Config</code> 로 이동할 수 있습니다.</p>
+<h4><a class="header" href="#반환된-반복자를-직접-사용하기" id="반환된-반복자를-직접-사용하기">반환된 반복자를 직접 사용하기</a></h4>
+<p>I/O 프로젝트의 <em>src/main.rs</em> 파일을 열어보면, 아래와 같을 것 입니다:</p>
+<p><span class="filename">파일명: src/main.rs</span></p>
+<pre><code class="language-rust ignore">fn main() {
+    let args: Vec&lt;String&gt; = env::args().collect();
+
+    let config = Config::new(&amp;args).unwrap_or_else(|err| {
+        eprintln!(&quot;Problem parsing arguments: {}&quot;, err);
+        process::exit(1);
+    });
+
+    // --snip--
+}
+</code></pre>
+<p>우리는 리스트 12-24 에 있는 <code>main</code> 함수의 시작점을 리스트 13-25 에 있는 코드로
+바꿀 것 입니다. 이것은 <code>Config::new</code> 도 업데이트 해야 컴파일 됩니다. </p>
+<p><span class="filename">파일명: src/main.rs</span></p>
+<pre><code class="language-rust ignore">fn main() {
+    let config = Config::new(env::args()).unwrap_or_else(|err| {
+        eprintln!(&quot;Problem parsing arguments: {}&quot;, err);
+        process::exit(1);
+    });
+
+    // --snip--
+}
+</code></pre>
+<p><span class="caption">리스트 13-25: <code>Config::new</code> 로 <code>env::args</code> 의 반환값
+넘기기</span></p>
+<p><code>env::args</code> 함수는 반복자를 반환 합니다! 반복자의 값들을 벡터로 모아서
+<code>Config::new</code> 에 슬라이스를 넘기는 대신, <code>env::args</code> 에서 반환된 반복자의 소유권
+을 <code>Config::new</code> 로 직접 전달 합니다.</p>
+<p>그 다음, <code>Config::new</code> 정의를 업데이트 할 필요가 있습니다. I/O 프로젝트의
+<em>src/lib.rs</em> 파일에서, 리스트 13-26 처럼 <code>Config::new</code> 의 시그니처를 변경
+합시다. 함수 본문을 업데이트 해야 하기 때문이 아직 컴파일 되지 않습니다.</p>
+<p><span class="filename">파일명: src/lib.rs</span></p>
+<pre><code class="language-rust ignore">impl Config {
+    pub fn new(mut args: std::env::Args) -&gt; Result&lt;Config, &amp;'static str&gt; {
+        // --snip--
+</code></pre>
+<p><span class="caption">리스트 13-26: 반복자를 받도록 <code>Config::new</code> 의 시그니처
+업데이트 하기</span></p>
+<p><code>env::args</code> 함수에 대한 표준 라이브러리 문서에는 반환하는 반복자의 타입이
+<code>std::env::Args</code> 라고 명시되어 있습니다. <code>Config::new</code> 함수의 시그니처를 업데이
+트 해서 <code>args</code> 파리미터가 <code>&amp;[String]</code> 대신 <code>std::env::Args</code> 타입을 갖도록
+했습니다. <code>args</code> 의 소유권을 갖고 그것을 순회하면서 <code>args</code> 를 변경할 것이기
+때문에, 변경 가능하도록 하기 위해 <code>args</code> 파라미터의 명세에 <code>mut</code> 키워드를 추가
+할 수 있습니다.</p>
+<h4><a class="header" href="#인덱싱-대신-iterator-트레잇-메서드-사용하기" id="인덱싱-대신-iterator-트레잇-메서드-사용하기">인덱싱 대신 <code>Iterator</code> 트레잇 메서드 사용하기</a></h4>
+<p>다음으로, <code>Config::new</code> 의 본문을 수정 할 것입니다. 표준 라이브러리 문서에는
+<code>std::env::Args</code> 이 <code>Iterator</code> 트레잇을 구현하고 있다는 것 역시 언급하고 있으
+므로, <code>next</code> 메서드를 호출 할 수 있다는 것을 알 수 있습니다! 리스트 13-27 은
+리스트 12-23 의 코드에서 <code>next</code> 메서드를 사용하도록 변경 합니다:</p>
+<p><span class="filename">Filename: src/lib.rs</span></p>
+<pre><pre class="playpen"><code class="language-rust"># fn main() {}
+# use std::env;
+#
+# struct Config {
+#     query: String,
+#     filename: String,
+#     case_sensitive: bool,
+# }
+#
+impl Config {
+    pub fn new(mut args: std::env::Args) -&gt; Result&lt;Config, &amp;'static str&gt; {
+        args.next();
+
+        let query = match args.next() {
+            Some(arg) =&gt; arg,
+            None =&gt; return Err(&quot;Didn't get a query string&quot;),
+        };
+
+        let filename = match args.next() {
+            Some(arg) =&gt; arg,
+            None =&gt; return Err(&quot;Didn't get a file name&quot;),
+        };
+
+        let case_sensitive = env::var(&quot;CASE_INSENSITIVE&quot;).is_err();
+
+        Ok(Config { query, filename, case_sensitive })
+    }
+}
+</code></pre></pre>
+<p><span class="caption">리스트 13-27: 반복자 메서드들을 사용하도록 <code>Config::new</code>
+의 본문 변경하기</span></p>
+<p><code>env::args</code> 반환값의 첫번째 값은 프로그램 이름이라는 것을 명심하세요.
+우리는 첫번째 값을 무시하고 그 다음 값을 얻기 위해 우선 <code>next</code> 를 호출한
+다음, 그 반환값으로 아무것도 하지 않았습니다. 두번째로, <code>Config</code> 의 <code>query</code> 에
+원하는 값을 넣기 위해 <code>next</code> 를 호출 했습니다. <code>next</code> 가 <code>Some</code> 을 반환하면,
+값을 추출하기 위해 <code>match</code> 를 사용 합니다. 만약 <code>None</code> 을 반환하면, 이것은
+충분한 인자가 넘어오지 않았다는 것을 의미하고, <code>Err</code> 값과 함께 조기 반환을
+합니다. <code>filename</code> 값도 동일하게 처리 합니다.</p>
+<h3><a class="header" href="#반복자-어댑터로-더-간결한-코드-만들기" id="반복자-어댑터로-더-간결한-코드-만들기">반복자 어댑터로 더 간결한 코드 만들기</a></h3>
+<p>I/O 프로젝트의 <code>search</code> 함수에도 반복자의 장점을 활용할 수 있습니다.
+리스트 12-19 의 코드가 리스트 13-28 에 재현되어 있습니다:</p>
+<p><span class="filename">파일명: src/lib.rs</span></p>
+<pre><code class="language-rust ignore">pub fn search&lt;'a&gt;(query: &amp;str, contents: &amp;'a str) -&gt; Vec&lt;&amp;'a str&gt; {
+    let mut results = Vec::new();
+
+    for line in contents.lines() {
+        if line.contains(query) {
+            results.push(line);
+        }
+    }
+
+    results
+}
+</code></pre>
+<p><span class="caption">리스트 13-28: 리스트 12-19 의 <code>search</code> 함수 구현</span></p>
+<p>우리는 반복자 어댑터 메서드를 사용해서 이 코드를 더 간결한 방식으로 작성할 수
+있습니다. 이렇게 함으로써 <code>results</code> 벡터가 변경 가능한 중간 상태를 갖는 것을
+피할 수 있습니다. 함수형 프로그래밍 스타일은 더 깔끔한 코드를 만들기 위해
+변경 가능한 상태의 양을 최소화 하는 것을 선호 합니다. 가변 상태를 제거하면
+<code>results</code> 벡터에 대한 동시 접근을 관리 할 필요가 없기 때문에, 추후에 검색을
+병렬로 수행하는 것과 같은 향상이 가능해 집니다. 리스트 13-29 는 이 변경을
+보여줍니다:</p>
+<p><span class="filename">파일명: src/lib.rs</span></p>
+<pre><code class="language-rust ignore">pub fn search&lt;'a&gt;(query: &amp;str, contents: &amp;'a str) -&gt; Vec&lt;&amp;'a str&gt; {
+    contents.lines()
+        .filter(|line| line.contains(query))
+        .collect()
+}
+</code></pre>
+<p><span class="caption">리스트 13-29: <code>search</code> 함수 구현에서 반복자 어댑터 메서드
+사용하기</span></p>
+<p><code>search</code> 함수의 목적은 <code>query</code> 를 포함하는 <code>contents</code> 의 모든 줄을 반환하는 것임
+을 기억하세요. 리스트 13-19 의 <code>filter</code> 예제와 유사하게, 이 코드는
+<code>line.contains(query)</code> 이 <code>true</code> 를 반환하는 줄들만 유지하기 위해 <code>filter</code> 어댑
+터를 사용 합니다. 그러고나서 <code>collect</code> 를 통해서 일치하는 줄들을 모아 새로운
+벡터로 만듭니다. 훨씬 단순합니다! <code>search_case_insensitive</code> 도 역시 반복자
+메서드들을 사용하도록 같은 변경을 자유롭게 만들어 보세요.</p>
+<p>다음 논리적 질문은 당신의 코드에서 어떤 스타일을 선택하는 것이 좋은지와 그 이유
+입니다: 리스트 13-28 의 최초 구현 혹은 리스트 13-29 의 반복자를 사용하는 버전.
+대부분의 러스트 프로그래머는 반복자 스타일을 선호 합니다. 처음 사용하기는
+다소 어렵습니다만, 다양한 반복자 어댑터와 어떤 일을 하는지에 대해 한번 감이
+온다면, 반복자들은 이해하기 쉬워질 것 입니다. 루핑과 새로운 벡터 생성과 같은
+다양한 작업을 수행하는 대신, 코드는 루프의 고차원적 목표에 집중 합니다.
+이것은 아주 흔한 코드의 일부를 추상화해서 제거함으로써 반복자의 각 요소가 반드시
+통과 해야하는 필터링 조건과 같이 이 코드에 유일한 개념을 더 쉽게 볼 수 있도록
+합니다.</p>
+<p>그러나 두 구현은 정말 동일 할까요? 직관적으로 저수준의 루프가 더 빠르다고 가정할
+수도 있습니다. 그럼 성능에 대해서 얘기해 봅시다.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="ch13-02-iterators.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="ch13-04-performance.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="ch13-02-iterators.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="ch13-04-performance.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
